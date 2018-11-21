@@ -1,15 +1,21 @@
 {
-  "name": "scriptmanager",
+  "name": "@codelessandro/scriptmanager", 
   "version": "1.0.0",
   "description": "",
   "main": "manager.js",
   "scripts": {
-    "test": "jest"  
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
     "jest": "^23.6.0"
+  },
+  "dependencies": {
+    "shelljs": "^0.8.3"
   }
 }
