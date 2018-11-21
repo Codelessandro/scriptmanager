@@ -5,6 +5,11 @@ const isDone = (script) => {
 	return data["Files"].filter( e => e["name"]==script).length>0;
 }
 
+const markDone = function(script) {
+	const done = JSON.parse(fs.readFileSync('done.json', 'utf8'));
+	done["Files"].push({"name" : script})
+	fs.writeFileSync('done.json', JSON.stringify(done));
+}
 
 const init = function() {
 	content = {"Files":[] }
@@ -15,15 +20,12 @@ const init = function() {
 }
 
 function run(script) {
-	const done = JSON.parse(fs.readFileSync('done.json', 'utf8'));
 	const shell = require('shelljs');
-	console.log(script)
 	shell.exec(script)
-	done["Files"].push({"name" : script})
-	fs.writeFileSync('done.json', JSON.stringify(done));
+	markDone(script)
 }
 
-
+module.exports.markDone = markDone
 module.exports.init = init
 module.exports.isDone = isDone
 module.exports.runScripts = function(scripts) {
