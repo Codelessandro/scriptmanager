@@ -23,8 +23,9 @@ function run(script) {
 	fs.writeFileSync('done.json', JSON.stringify(done));
 }
 
-module.exports.init = init
 
+module.exports.init = init
+module.exports.isDone = isDone
 module.exports.runScripts = function(scripts) {
 	init()
 	scripts.filter( script => !isDone(script)).forEach( script => run(script)  )  
