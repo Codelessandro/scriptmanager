@@ -23,6 +23,8 @@ function run(script) {
 	const shell = require('shelljs');
 	shell.exec(script)
 	markDone(script)
+	console.log(`script ${script} run`)
+	console.log("---------")
 }
 
 module.exports.markDone = markDone
