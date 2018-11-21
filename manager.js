@@ -3,19 +3,17 @@ const fs = require('fs')
 
 
 let isDone = (script) => { 
-	data = JSON.parse(fs.readFileSync('data.json', 'utf8'))
+	data = JSON.parse(fs.readFileSync('done.json', 'utf8'))
 	return data["Files"].filter( e => e["name"]==script).length>0
 }
 
 
 function run(script) {
-	data = JSON.parse(fs.readFileSync('data.json', 'utf8'))
-	console.log(data)
-	console.log("--")
+	done = JSON.parse(fs.readFileSync('done.json', 'utf8'))
 	//run script here
-	data = data["Files"].push({"name" : script})
-	console.log(data)
-	console.log(typeof(data))
+	done["Files"].push({"name" : script})
+	console.log(typeof(done))
+	fs.writeFileSync('done.json', done);
 	//fs.writeFileSync('data.json', data)
 }
 
