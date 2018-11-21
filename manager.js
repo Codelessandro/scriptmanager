@@ -14,7 +14,7 @@ const markDone = function(script) {
 const init = function() {
 	content = {"Files":[] }
 	try{
-            fs.writeFileSync('done.json', JSON.stringify(content));
+            fs.writeFileSync('done.json', JSON.stringify(content), {flag : "ax" } );
 	}catch (e){
 	}
 }
