@@ -1,6 +1,6 @@
 {
   "name": "@codelessandro/scriptmanager", 
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "manager.js",
   "scripts": {
