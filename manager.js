@@ -20,10 +20,12 @@ const init = function() {
 }
 
 function run(script) {
+	console.log("----------")
+	console.log(`script ${script} starts running...`);
 	const shell = require('shelljs');
 	shell.exec(script)
 	markDone(script)
-	console.log(`script ${script} run`)
+	console.log(`script ${script} done.`)
 	console.log("---------")
 }
 
