@@ -21,7 +21,7 @@ const init = function() {
 
 function run(script) {
 	console.log("----------")
-	console.log(`script ${script} starts running...`);
+	console.log(`script ${script} starts running (${new Date()})...`);
 	const shell = require('shelljs');
 	shell.exec(script)
 	markDone(script)
